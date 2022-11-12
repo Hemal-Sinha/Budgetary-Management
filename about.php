@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>About</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="style.css"> -->
@@ -37,29 +37,29 @@ session_start();
       </div>
       <span class="navbar-brand" href="#">
         <?php echo "Hello, ".$_SESSION['User']."!"?>
-        <a href="first.php">
+        <a href="logout.php">
           <img src="Images/logout.png" width="70" height="40">
-        </a>
+          </a>
       </span>
     </div>
   </nav>
 
 
   <div>
-    <h3>TEAM : </h3>
+    <h3>CONTACT : </h3>
   </div>
 
 
     <div class="card mb-3" style="max-width: 540px;margin: 0 auto;background:transparent;border:3px solid black">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="Images/profile.png" class="img-fluid rounded-start" alt="...">
+                <img src="Images/profile.png" style="height:200px;" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Hemal Sinha</h5>
-                    <p class="card-text">I am a beginner web developer and this is one of my first major project.</p>
-                    <p class="card-text">Contact : hemalsinha18jan@gmail.com</p>
+                    <h5 class="card-title">Hemal Sinha (21JE0397)</h5>
+                    <p class="card-text">Hi! I am a keen learner. I have interest in Web Developing and Blockchain. This was my project on cash management, hopefully you find it useful.</p>
+                    <p class="card-text">Contact : 21je0397@iitism.ac.in</p>
                 </div>
             </div>
         </div>
