@@ -1,21 +1,54 @@
 <?php
-// function currency_converter($from,$to,$amount)
-// {
-//  $url = "http://www.google.com/finance/converter?a=$amount&from=$from&to=$to"; 
- 
-//  $request = curl_init(); 
-//  $timeOut = 0; 
-//  curl_setopt ($request, CURLOPT_URL, $url); 
-//  curl_setopt ($request, CURLOPT_RETURNTRANSFER, 1); 
- 
-//  curl_setopt ($request, CURLOPT_USERAGENT,"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)"); 
-//  curl_setopt ($request, CURLOPT_CONNECTTIMEOUT, $timeOut); 
-//  $response = curl_exec($request); 
-//  curl_close($request); 
- 
-//  return $response;
-// } 
 
+
+function toinr($curr)
+{
+	if(strcmp($curr,"INR")==0)
+	{
+		$conv=1;
+	}
+	else if(strcmp($curr,"USD")==0)
+	{
+		$conv=80.50;
+	}
+	else if(strcmp($curr,"AUD")==0)
+	{
+		$conv=53.98;
+	}
+	else if(strcmp($curr,"GBP")==0)
+	{
+		$conv=95.30;
+	}
+	else
+	{
+		$conv=83.41;
+	}
+	return $conv;
+}
+function tocur($curr)
+{
+	if(strcmp($curr,"INR")==0)
+	{
+		$conv=1;
+	}
+	else if(strcmp($curr,"USD")==0)
+	{
+		$conv=0.012;
+	}
+	else if(strcmp($curr,"AUD")==0)
+	{
+		$conv=0.019;
+	}
+	else if(strcmp($curr,"GBP")==0)
+	{
+		$conv=0.010;
+	}
+	else
+	{
+		$conv=0.012;
+	}
+	return $conv;
+}
 include('db.php');
 session_start();
 $bname = $_GET['b'];
@@ -26,19 +59,9 @@ $to_curr = mysqli_fetch_array(mysqli_query($connect,$query))[0];
 $amt=$_POST['amt'];
 $rmk=$_POST['rmk'];
 $fr_curr=$_POST['currency'];
-
-
-
-
-// $rawData = currency_converter($fr_curr,$to_curr,$amt);
-// $regex = '#\<span class=bld\>(.+?)\<\/span\>#s';
-// preg_match($regex, $rawData, $converted);
-// $amt = $converted[0];
-// // echo $result;
-
-
-
-
+$cv=toinr($fr_curr);
+$cv=$cv*tocur($to_curr);
+$amt=$amt*$cv;
 if ($_POST['action'] == 'INCOME')
 {
     $rem=$rem + $amt;
