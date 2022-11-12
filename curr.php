@@ -10,7 +10,7 @@ if(mysqli_num_rows(mysqli_query($connect,$query))>0)
 }
 else
 {
-    $query = "CREATE TABLE ".$bname."(type VARCHAR(225),amt int,rmk VARCHAR(225));";
+    $query = "CREATE TABLE ".$bname."(type VARCHAR(225),amt double,rmk VARCHAR(225));";
     mysqli_query($connect,$query);
     $query = "INSERT INTO ".$_SESSION['User']."(bname,rem,curr) VALUES('".$bname."',0,'".$currency."');";
     mysqli_query($connect,$query);
