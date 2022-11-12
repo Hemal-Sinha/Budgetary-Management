@@ -1,5 +1,5 @@
 <?php
-session_abort();
+// session_abort();
 if (isset($_GET['msg'])){
     $msg=$_GET['msg'];
 }
@@ -31,7 +31,7 @@ else
   </div>
 
 
-  <h1 id='init'><b>BUDGETARY MANAGEMENT</b></h1>
+  <h1 id='init'><b>Budgetary Management</b></h1>
 
 
   <div class="container">
