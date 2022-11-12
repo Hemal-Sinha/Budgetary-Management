@@ -8,3 +8,5 @@ One can make an account of themselves and track their expense, income and total 
 Every slot will show your recent 10 transaction of that slot on the main page of it, still if you wish to see all the transaction, one can access that too on a detailed page.
 One can also set your currency of expense for indiviudal slots.
 I have used JavaScript , HTML, CSS , PHP and SQL for this project
+
+https://github.com/Hemal-Sinha/Budgetary-Management/issues/1#issue-1446587252
