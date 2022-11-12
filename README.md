@@ -9,4 +9,4 @@ Every slot will show your recent 10 transaction of that slot on the main page of
 One can also set your currency of expense for indiviudal slots.
 I have used JavaScript , HTML, CSS , PHP and SQL for this project
 
-https://github.com/Hemal-Sinha/Budgetary-Management/issues/1#issue-1446587252
+https://github.com/Hemal-Sinha/Budgetary-Management/issues/1#issuecomment-1312580686
