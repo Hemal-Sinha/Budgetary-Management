@@ -19,7 +19,7 @@ $income=mysqli_query($connect,$query);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Current Budget</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styling/bud.css">
@@ -48,9 +48,10 @@ $income=mysqli_query($connect,$query);
       
       <span class="navbar-brand" href="#">
         <?php echo "Hello, ".$_SESSION['User']."!"?>
-        <a href="first.php">
+        <a href="logout.php">
           <img src="Images/logout.png" width="70" height="40">
         </a>
+
       </span>
     </div>
   </nav>
@@ -70,11 +71,11 @@ $income=mysqli_query($connect,$query);
         </div>
         <select class="form-select" name="currency" aria-label="Default select example">
           <option selected class="opt">Select Currency</option>
-          <option class="opt">US DOLLAR $</option>
-          <option class="opt">AUS DOLLAR $</option>
-          <option class="opt">EURO €</option>
-          <option class="opt">POUND £</option>
-          <option class="opt">INDIAN RUPEE ₹</option>
+          <option class="opt">USD</option>
+          <option class="opt">AUD</option>
+          <option class="opt">EUR</option>
+          <option class="opt">GBP</option>
+          <option class="opt">INR</option>
         </select>
         <div class="formGroup">
           <input type="text" placeholder="Remarks" name="rmk" autocomplete="off">
@@ -108,22 +109,41 @@ $income=mysqli_query($connect,$query);
       <?php
       $n=1;
       $no=mysqli_num_rows($income);
-      $var=$no-10;
-      foreach($income as $row)
+      if($no>10)
       {
-        if($n>$var)
+        $var=$no-10;
+        foreach($income as $row)
         {
-          $type=$row['type'];
-          $rmk = $row['rmk'];
-          $amt = $row['amt'];
-          echo "<tr>";
-          echo "<th scope='row'>".$n-$var."</th>";
-          echo "<td class='t'>".$type."</td>";
-          echo "<td class='t'>".$amt."</td>";
-          echo "<td class='t'>".$rmk."</td>";
-          echo "</tr>";
+          if($n>$var)
+          {
+            $type=$row['type'];
+            $rmk = $row['rmk'];
+            $amt = $row['amt'];
+            echo "<tr>";
+            echo "<th scope='row'>".$n-$var."</th>";
+            echo "<td class='t'>".$type."</td>";
+            echo "<td class='t'>".$amt."</td>";
+            echo "<td class='t'>".$rmk."</td>";
+            echo "</tr>";
+          }
+          $n=$n+1;
         }
-        $n=$n+1;
+      }
+      else
+      {
+        foreach($income as $row)
+        {
+            $type=$row['type'];
+            $rmk = $row['rmk'];
+            $amt = $row['amt'];
+            echo "<tr>";
+            echo "<th scope='row'>".$n-$var."</th>";
+            echo "<td class='t'>".$type."</td>";
+            echo "<td class='t'>".$amt."</td>";
+            echo "<td class='t'>".$rmk."</td>";
+            echo "</tr>";
+            $n=$n+1;
+        }
       }
       ?>
     </tbody>
