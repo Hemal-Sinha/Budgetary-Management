@@ -14,7 +14,7 @@ if (isset($_GET['msg'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>New Budget</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styling/addnew.css">
@@ -42,7 +42,7 @@ if (isset($_GET['msg'])){
             </div>
             <span class="navbar-brand" href="#">
                 <?php echo "Hello, ".$_SESSION['User']."!"?>
-                <a href="first.php">
+                <a href="logout.php">
                     <img src="Images/logout.png" width="70" height="40">
                 </a>
             </span>
@@ -64,11 +64,11 @@ if (isset($_GET['msg'])){
                 </div>
                 <select class="form-select" name="currency" aria-label="Default select example">
                     <option selected class="opt">Select Currency</option>
-                    <option class="opt">US DOLLAR $</option>
-                    <option class="opt">AUS DOLLAR $</option>
-                    <option class="opt">EURO €</option>
-                    <option class="opt">POUND £</option>
-                    <option class="opt">INDIAN RUPEE ₹</option>
+                    <option class="opt">USD</option>
+                    <option class="opt">AUD</option>
+                    <option class="opt">EUR</option>
+                    <option class="opt">GBP</option>
+                    <option class="opt">INR</option>
                 </select>
                 <div class="formGroup">
                     <button type="submit" class="btn2">CONTINUE</button>
